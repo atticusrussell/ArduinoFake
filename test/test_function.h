@@ -54,8 +54,7 @@ namespace FunctionTest
         When(Method(ArduinoFake(), analogWriteFrequency)).AlwaysReturn();
 
         analogWriteFrequency(1, 1000);
-
-        Verify(Method(ArduinoFake(), analogWriteFrequency)).Once();
+        Verify(Method(ArduinoFake(), analogWriteFrequency).Using(1, 1000)).Once();
     }
 
     void test_analog_pin_resolution(void)
@@ -63,8 +62,7 @@ namespace FunctionTest
         When(Method(ArduinoFake(), analogWriteResolution)).AlwaysReturn();
 
         analogWriteResolution(8);
-
-        Verify(Method(ArduinoFake(), analogWriteResolution)).Once();
+        Verify(Method(ArduinoFake(), analogWriteResolution).Using(8)).Once();
     }
 
     void test_yield(void)

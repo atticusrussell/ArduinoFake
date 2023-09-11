@@ -120,3 +120,14 @@ void yield()
 {
     ArduinoFakeInstance(Function)->yield();
 }
+
+void analogWriteFrequency(uint8_t pin, long frequency)
+{
+    ArduinoFakeInstance(Function)->analogWriteFrequency(pin, frequency);
+}
+
+void analogWriteResolution(uint32_t bits)
+{
+    ArduinoFakeInstance(Function)->analogWriteResolution(bits);
+}
+

@@ -26,6 +26,7 @@
 #include <string.h>
 #include <math.h>
 #include "avr/interrupt.h"
+#include "teensy/AnalogWriteProperties.h"
 
 
 #include "binary.h"

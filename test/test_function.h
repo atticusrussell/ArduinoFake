@@ -49,6 +49,24 @@ namespace FunctionTest
         Verify(Method(ArduinoFake(), analogRead).Using(4)).Once();
     }
 
+    void test_analog_pin_frequency(void)
+    {
+        When(Method(ArduinoFake(), analogWriteFrequency)).AlwaysReturn();
+
+        analogWriteFrequency(1, 1000);
+
+        Verify(Method(ArduinoFake(), analogWriteFrequency)).Once();
+    }
+
+    void test_analog_pin_resolution(void)
+    {
+        When(Method(ArduinoFake(), analogWriteResolution)).AlwaysReturn();
+
+        analogWriteResolution(8);
+
+        Verify(Method(ArduinoFake(), analogWriteResolution)).Once();
+    }
+
     void test_yield(void)
     {
         When(Method(ArduinoFake(), yield)).AlwaysReturn();
@@ -188,6 +206,8 @@ namespace FunctionTest
         RUN_TEST(FunctionTest::test_pin_mode);
         RUN_TEST(FunctionTest::test_digital_pin);
         RUN_TEST(FunctionTest::test_analog_pin);
+        RUN_TEST(FunctionTest::test_analog_pin_frequency);
+        RUN_TEST(FunctionTest::test_analog_pin_resolution);
         RUN_TEST(FunctionTest::test_delay);
         RUN_TEST(FunctionTest::test_detach);
         RUN_TEST(FunctionTest::test_attach);

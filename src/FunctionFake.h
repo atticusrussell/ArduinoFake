@@ -43,4 +43,7 @@ struct FunctionFake
     virtual long map(long, long, long, long, long) = 0;
 
     virtual void yield() = 0;
+
+    virtual void analogWriteFrequency(uint8_t, long) = 0;
+    virtual void analogWriteResolution(uint32_t) = 0;
 };
